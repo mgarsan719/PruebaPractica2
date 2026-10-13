@@ -42,7 +42,7 @@ function iniciarContador() {
     intervalo = window.setInterval(() => {
         document.getElementById("contador").textContent = cont;
         cont--;
-        if (cont == 0) {
+        if (cont == -1) {
             window.clearInterval(intervalo);
         }
     }, 1000);
