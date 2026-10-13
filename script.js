@@ -26,12 +26,77 @@ function act2() {
 }
 
 // ACT 3
-function volver(){
+function volver() {
     window.history.back();
 }
 
-function recargar(){
+function recargar() {
     window.location.reload();
 }
 
 //ACT 4
+let intervalo;
+function iniciarContador() {
+    let segs = 30;
+    let cont = segs;
+    intervalo = window.setInterval(() => {
+        document.getElementById("contador").textContent = cont;
+        cont--;
+        if (cont == 0) {
+            window.clearInterval(intervalo);
+        }
+    }, 1000);
+}
+
+function detenerIntervalo() {
+    window.clearInterval(intervalo);
+}
+
+//ACT 5
+function ventanaEmergente() {
+    window.open("https://www.google.com/?hl=es");
+}
+
+function cerrarEmergente() {
+    window.close();
+}
+
+//ACT 6
+function cambiarFondo() {
+
+    const confirmacion = window.confirm("Desea cambiar el color?")
+
+    if (confirmacion) {
+        let entra = true;
+        do {
+            color = window.prompt("Dame el color");
+            if (color) {
+                document.body.style.backgroundColor = color;
+                entra = false;
+            }
+        } while (entra);
+    }
+}
+
+//ACT 7
+function muestraInfo() {
+    let nombre = window.prompt("Muestra tu nombre");
+    if (!nombre) {
+        window.alert("No se ha introducido nada o se ha cancelado");
+    }
+    else {
+        window.alert(`Bienvenido, ${nombre}`);
+    }
+}
+
+//ACT 8
+function compruebaTamanyo(){
+    let anchoVentana = window.innerWidth;
+
+    if (anchoVentana >= 768) {
+        window.alert("Tu ventana es grande");
+    }
+    else {
+        window.alert("Tu ventana es pequeña");
+    }
+}
